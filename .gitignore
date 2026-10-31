@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Scratch
+scratch/
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / Environment
+.vscode/
+.idea/
+*.swp
+*.swo
+.env
+.env.local

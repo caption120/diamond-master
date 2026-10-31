@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diamond Master Downloader</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="logo-area">
+        <div class="logo-gem-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3h12l4 6-10 12L2 9z"></path>
+            <path d="M11 3v6"></path>
+            <path d="M13 3v6"></path>
+            <path d="M2 9h20"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="logo-title">Diamond Master</h1>
+          <p class="logo-subtitle">4K Image & Reel Downloader</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <label class="master-switch" title="Turn Extension ON / OFF">
+          <input type="checkbox" id="masterToggle" checked />
+          <span class="switch-slider"></span>
+        </label>
+        <div class="header-badge" id="sourceTag">AUTO</div>
+      </div>
+    </header>
+
+    <!-- Page Stats Card -->
+    <section class="stats-card">
+      <div class="stat-item">
+        <span class="stat-number" id="imageCount">0</span>
+        <span class="stat-label">Media Items</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" id="selectedCount">0</span>
+        <span class="stat-label">Selected</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number highlight" id="clarityLevel">Master</span>
+        <span class="stat-label">1080p / 4K</span>
+      </div>
+    </section>
+
+    <!-- Master Action Buttons -->
+    <section class="primary-actions">
+      <button id="btnDownloadAll" class="btn btn-primary-glass">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+          <path d="m3.3 7 8.7 5 8.7-5"></path>
+          <path d="M12 22V12"></path>
+        </svg>
+        Download All as ZIP
+      </button>
+
+      <div class="action-row">
+        <button id="btnOpenSidePanel" class="btn btn-secondary" title="Open Slide-out Side Drawer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="15" y1="3" x2="15" y2="21"></line>
+          </svg>
+          Side Drawer
+        </button>
+        <button id="btnSelectAll" class="btn btn-secondary">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Select All
+        </button>
+        <button id="btnDeselectAll" class="btn btn-secondary">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          Clear
+        </button>
+      </div>
+    </section>
+
+    <!-- Filtering & Settings -->
+    <section class="settings-section">
+      <div class="setting-row">
+        <label for="minSizeSelect" class="setting-label">Ignore Images Smaller Than:</label>
+        <select id="minSizeSelect" class="setting-select">
+          <option value="100" selected>100 px (All Products)</option>
+          <option value="250">250 px (Clean)</option>
+          <option value="500">500 px (Product Only)</option>
+          <option value="800">800 px (Ultra HD)</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Preview Gallery -->
+    <section class="gallery-section">
+      <div class="gallery-header">
+        <span class="gallery-title">Detected Media</span>
+        <span class="gallery-hint">Click card to select</span>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="empty-state">Scanning active page for media assets...</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <span>100% Bit-Exact Quality</span>
+      <span>•</span>
+      <span>Etsy, Shopify, Instagram Reels</span>
+    </footer>
+  </div>
+
+  <script type="module" src="popup.ts"></script>
+</body>
+</html>

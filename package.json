@@ -1,0 +1,21 @@
+{
+  "name": "diamond-clarity-image-downloader",
+  "version": "1.0.0",
+  "description": "Ultra-HD & Master Quality Image Downloader for Jewelry, Etsy, Instagram & E-commerce",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node build.js",
+    "zip": "node build.js && powershell -Command \"Compress-Archive -Path dist\\* -DestinationPath diamond-master-v2.0.0.zip -Force\""
+  },
+  "dependencies": {
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.280",
+    "@types/jszip": "^3.4.1",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  }
+}
